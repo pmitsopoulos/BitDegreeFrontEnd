@@ -38,6 +38,7 @@ context.quadraticCurveTo(startx+trunkw,starty-windowH,startx+trunkw+10,starty-wi
 context.quadraticCurveTo(startx+bodyw+20,starty-windowH,startx+bodyw+20,starty-windowH);
 context.quadraticCurveTo(startx+bodyw+20+10,starty-windowH,startx+bodyw+20+35,starty);
 
+//context.closePath();
 context.stroke();
 
 
