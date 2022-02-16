@@ -1,0 +1,35 @@
+Initialize your project.
+Hint: 
+npm init -y
+
+Install TypeScript to your project.
+Hint:
+npm install typescript --save-dev
+
+Initialize your TypeScript config.
+Hint: 
+npx tsc --init
+
+Create a source and distribution folder in your project.
+Hint:
+mkdir ./src
+mkdir ./dist
+
+Make sure your root directory in the TypeScript config file is set to "./src" and the output directory is set to "./dist". Make sure neither are commented out.
+Hint: rootDir & outDir should be uncommented and list the relevant directory folders.
+
+Start a new TypeScript file in your "src" folder.
+Hint: 
+touch index.ts
+
+Console log a greeting.
+Hint: 
+console.log(‘Hello World’);
+
+Compile your project.
+Hint:
+npx tsc
+
+Run your JavaScript file in the console.
+Hint:
+node dist/index.js
