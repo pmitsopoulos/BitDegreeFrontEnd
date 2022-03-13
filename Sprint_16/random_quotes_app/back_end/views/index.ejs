@@ -1,0 +1,20 @@
+<%-include("./partials/header.ejs")%>
+<%-include("./partials/navbar.ejs")%>
+
+
+<!--foreach loop with all the quotes view-->
+<section id="index-display">
+    <% if(quotes.length > 0) { %>
+        <% quotes.forEach(quote=> { %>
+            <h3 class="author"><%= quote.author %></h3>
+            <p class="snippet"><%= quote.snippet %></p>
+            <p><%= quote.body %></p>   
+            <a class="single" href= "/quotes/<%= quote._id %>">Details</a>
+        <% }) %>   
+    <% } else { %>
+     <p>There are currently no quotes available...</p>
+    <% } %>
+</section>
+<%-include("./partials/footer.ejs")%>
+<%-include("./partials/closingtags.ejs")%>
+

@@ -1,0 +1,24 @@
+<%-include("./partials/header.ejs")%>
+<%-include("./partials/navbar.ejs")%>
+
+<!--Details of a Quote-->
+<div class="details content">
+<% if(quote !== null) { %>
+    
+    <h2><%= quote.author %></h2>
+    
+    <div class="content">
+        <p><%= quote.body %></p>
+    </div>
+
+    <a class="delete" data-doc="<%= quote._id %>">Delete</a>
+
+<% } else { %>
+    <h2>The quote was not found...</h2>
+<% } %>
+</div>
+
+
+<%-include("./partials/footer.ejs")%>
+<%-include("./partials/detailscript.ejs")%>
+<%-include("./partials/closingtags.ejs")%>

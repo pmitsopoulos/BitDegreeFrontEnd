@@ -1,0 +1,14 @@
+<script>
+    const trashcan = document.querySelector("a.delete");
+    const endpoint = `/quotes/${trashcan.dataset.doc}`;
+    trashcan.addEventListener("click",(event)=>{
+        fetch(endpoint,{method:"DELETE"})
+        .then((response)=>{
+            console.warn(response.json);
+        })
+        .then((data)=>(window.location.href="/quotes"))
+        .catch((err=>{
+            console.error(err);
+        }))
+    })
+</script>
