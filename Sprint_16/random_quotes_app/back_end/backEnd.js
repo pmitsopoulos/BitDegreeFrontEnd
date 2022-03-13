@@ -1,7 +1,6 @@
 import express, { response } from "express";
 import fs from "fs";
 import quotesJackHandey from "./public/quotes.js";
-import dotenv from "dotenv";
 import mongoose from "mongoose";
 import {Quote} from "./models/quote.js"
 
@@ -9,7 +8,7 @@ dotenv.config();
 
 const app = express();
 const PORT = 3000;
-const connectionString = process.env.CONNECTION_STRING;
+const connectionString = "Super Secret connection string";
 
 app.set("view engine", "ejs");
 app.use(express.static("public"));
