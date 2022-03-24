@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+
+  <title>My Library</title>
+
+  <style>
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    }
+  </style>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div id="root"></div>
+  <script src="https://unpkg.com/babel-standalone@6.26.0/babel.min.js"></script>
+  <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+
+  <script type="text/babel">
+    class Book {
+      constructor(title, author) {
+        this.title = title;
+        this.author = author;
+      }
+
+      toString() {
+        return `${this.title}, by ${this.author}`;
+      }
+    }
+
+    class Film {
+      constructor(name, genre, blurb) {
+        this.name = name;
+        this.genre = genre;
+        this.blurb = blurb;
+      }
+
+      toString() {
+        return `${this.name} [${this.genre}], ${this.blurb}`;
+      }
+    }
+
+    const books = [
+      new Book("Millennium", "Stieg Larsson"),
+      new Book("A Christmas Carol", "Charles Dickens"),
+      new Book("The Son", "Jo Nesbo"),
+    ];
+
+    const films = [
+      new Film("Airplane", "Comedy", "Classic plane spoof"),
+      new Film("Skyfall", "Adventure", "Bond spy yarn"),
+      new Film("Love Actually", "RomCom", " Hugh Grant playing Hugh Grant"),
+    ];
+
+    
+    // class ItemsListClassComponentMethod extends React.Component{
+    //   render(){
+    //     const typeOfList = this.props.ordered ? "ol" : "ul";
+    //     return React.createElement(
+    //       typeOfList,
+    //       null,
+    //       this.props.items.map((item,index)=>{
+    //         return React.createElement(
+    //           "li",
+    //           {key:index},
+    //           item.toString()
+    //         )
+    //       })
+    //     )
+    //   }
+    // }
+
+    function ItemsListFunctionComponentMethod({items = [], ordered = true}) {
+      const TypeOfList = ordered ? "ol" : "ul";
+      //JSX
+      return(
+        <TypeOfList>
+          {items.map((item,index)=>{
+            return <li key={index}>{item.toString()}</li>
+          })}
+          </TypeOfList>
+      )
+      
+      //Non JSX
+      // return React.createElement(
+      //   typeOfList,
+      //   null,
+      //   items.map((item,index)=>{
+      //      return React.createElement("li",{key:index},item.toString())
+      //   }))
+      }
+
+
+      function TableHead({headerKeysFromObject})
+      {
+        //JSX
+
+        return (
+        <thead>
+          <TableRow isHeader={true} entry={Object.keys(headerKeysFromObject)} />
+        </thead>
+        )
+
+        //Non JSX
+        // return React.createElement(
+        //   "thead",
+        //   null,
+        //   React.createElement(
+        //     TableRow,
+        //     {isHeader: true, entry: Object.keys(headerKeysFromObject)},            
+        //     null)
+        // )
+      }
+
+      function TableBody({data})
+      {
+        //JSX
+        return (
+        <tbody>
+            {data.map((item,index)=>{
+               return <TableRow entry={Object.values(item)} key={index} isHeader={false}/>
+            })}
+        </tbody>)
+
+
+        //Non JSX
+        // return React.createElement(
+        // "tbody",
+        // null,
+        // data.map((item,index)=>{
+        //   return React.createElement(
+        //     TableRow,
+        //     {entry: Object.values(item), isHeader: false, key: index},
+        //     null
+        //   )
+        // }));
+      }
+
+      function TableRow({entry,isHeader=false})
+      {
+        const TypeOfRow = isHeader ? "th" : "td";
+        
+        //JSX
+        return (
+          <tr>
+            {entry.map((property,index)=>{
+              return <TypeOfRow key={index}>{property}</TypeOfRow>
+            })}
+            </tr>
+        )
+
+        //Non JSX
+        // const typeOfRow = isHeader ? "th" : "td";
+        // return React.createElement(
+        //   "tr",
+        //   null,
+        //   entry.map((propertyValue,index)=>{
+        //     return React.createElement(
+        //       typeOfRow,
+        //       {key:index},
+        //       propertyValue)
+        //   })
+        // )
+      }
+
+     function Table({data})
+     {
+       //JSX
+       return (
+        <table>
+          <TableHead headerKeysFromObject={data[0]}></TableHead>
+          <TableBody data={data}></TableBody>
+        </table>
+       )
+
+       //Non JSX
+      //  return React.createElement(
+      //    "table",
+      //    null,
+      //    React.createElement(TableHead,{headerKeysFromObject: data[0]}),
+      //    React.createElement(TableBody,{data: data})
+      //  )
+     }
+
+
+
+      //JSX
+      const rootElement = 
+      <div>
+        <h1>MyLibrary</h1>
+        <h2>Books List</h2>
+        <ItemsListFunctionComponentMethod items={books} ordered={true}/>
+        <h2>Films List</h2>
+        <ItemsListFunctionComponentMethod items={films} ordered={true}/>
+        <h2>Books Table</h2>
+        <Table data={books}/>
+        <h2>Films Table</h2>
+        <Table data={films}/>
+      </div>
+
+      //Non JSX
+      // const rootElement = React.createElement(
+      // "div",
+      //   null,
+      //   React.createElement("h1", null, "My Library"),
+      //   React.createElement("h2", null, "Books list"),
+      //   React.createElement(ItemsListFunctionComponentMethod, { items: books, ordered: true }, null),
+      //   React.createElement("h2", null, "Films list"),
+      //   React.createElement(ItemsListFunctionComponentMethod, { items: films }, null),
+      //   React.createElement("h2", null, "Books table"),
+      //   React.createElement(Table, { data: books }, null),
+      //   React.createElement("h2", null, "Films table"),
+      //   React.createElement(Table, { data: films }, null)
+      // );
+
+        
+
+
+    ReactDOM.render(rootElement, document.getElementById("root"));
+  </script>
+</body>
+
+</html>
