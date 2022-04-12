@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1649793109641" clover="3.2.0">
+  <project timestamp="1649793109641" name="All files">
+    <metrics statements="16" coveredstatements="11" conditionals="16" coveredconditionals="10" methods="4" coveredmethods="2" elements="36" coveredelements="23" complexity="0" loc="16" ncloc="16" packages="1" files="3" classes="3"/>
+    <file name="add.js" path="C:\Users\panag\Desktop\BitDegree\BitDegreeFrontEnd\Sprint_20\Assignment-7_2\testing-javascript-code\src\add.js">
+      <metrics statements="4" coveredstatements="4" conditionals="4" coveredconditionals="4" methods="1" coveredmethods="1"/>
+      <line num="2" count="3" type="cond" truecount="4" falsecount="0"/>
+      <line num="3" count="1" type="stmt"/>
+      <line num="5" count="2" type="stmt"/>
+      <line num="8" count="1" type="stmt"/>
+    </file>
+    <file name="filterBiggest.js" path="C:\Users\panag\Desktop\BitDegree\BitDegreeFrontEnd\Sprint_20\Assignment-7_2\testing-javascript-code\src\filterBiggest.js">
+      <metrics statements="6" coveredstatements="1" conditionals="6" coveredconditionals="0" methods="2" coveredmethods="0"/>
+      <line num="11" count="0" type="cond" truecount="0" falsecount="2"/>
+      <line num="12" count="0" type="stmt"/>
+      <line num="15" count="0" type="cond" truecount="0" falsecount="2"/>
+      <line num="16" count="0" type="stmt"/>
+      <line num="19" count="0" type="stmt"/>
+      <line num="22" count="1" type="stmt"/>
+    </file>
+    <file name="singularOrPlural.js" path="C:\Users\panag\Desktop\BitDegree\BitDegreeFrontEnd\Sprint_20\Assignment-7_2\testing-javascript-code\src\singularOrPlural.js">
+      <metrics statements="6" coveredstatements="6" conditionals="6" coveredconditionals="6" methods="1" coveredmethods="1"/>
+      <line num="12" count="4" type="cond" truecount="4" falsecount="0"/>
+      <line num="13" count="2" type="stmt"/>
+      <line num="15" count="2" type="cond" truecount="2" falsecount="0"/>
+      <line num="16" count="1" type="stmt"/>
+      <line num="18" count="1" type="stmt"/>
+      <line num="22" count="1" type="stmt"/>
+    </file>
+  </project>
+</coverage>
