@@ -1,11 +1,11 @@
 import Counter from "./components/Counter";
-import FavouriteNumber from "./components/FavouriteNumber";
+import {FavoriteNumber} from "./components/FavouriteNumber";
 
 function App() {
   return (
     <div>
       <Counter />
-      <FavouriteNumber />
+      <FavoriteNumber />
     </div>
   );
 }
